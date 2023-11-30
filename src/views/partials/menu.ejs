@@ -1,0 +1,50 @@
+<%
+    if(items){
+        var cards = '';
+          
+           var title = items.name;
+           var summary = items.summary;
+           var genre = items.genres;
+           var rating = items.rating.average;
+           var img = items.image.original;
+          var body = `<div class="clearfix">
+                <img class="img2" src=${img} alt="Orignal poster" width="220" height="330">
+                <h5 id="show_title" name="show_title" class="card-title">${title}</h5>
+            <h6 class="card-text">Genres</h6>
+            <p class="card-text">${genre}</p>
+            <h6 class="card-text">Summary</h6>
+            <p class="card-text">${summary}</p>
+            <h6 class="card-text">Average Rating</h6>
+            <p class="card-text">${rating}</p>
+            <div class="Modal">
+                <a
+                  href="#myModal"
+                  class="review"
+                  data-toggle="modal"
+                  onclick="openModal()"
+                  >Add Review</a
+                >
+              </div>
+              </div>`;
+          cards += body;
+       
+%>
+<%- cards %>
+<% } %>
+<% if(!items){
+    var cards = '';
+    var body = `<div class="clearfix">
+        <img class="img2" src="../../resources/Image-Not-Available.png" alt="Orignal poster" width="220" height="330">
+        <h5 class="card-title"></h5>
+    <h6 class="card-text">Genres</h6>
+    <p class="card-text">-</p>
+    <h6 class="card-text">Summary</h6>
+    <p class="card-text">-</p>
+    <h6 class="card-text">Average Rating</h6>
+    <p class="card-text">-</p>
+      </div>`;
+  cards += body;
+
+%>
+<%- cards %>
+<%}%>

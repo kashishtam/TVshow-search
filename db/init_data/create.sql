@@ -1,0 +1,9 @@
+--CREATE SCHEMA TVshows;
+
+DROP TABLE IF EXISTS Reviews;
+
+CREATE TABLE IF NOT EXISTS Reviews (
+  ID SERIAL PRIMARY KEY,
+  tv_show TEXT,
+  review TEXT,
+  review_date TIMESTAMP);
